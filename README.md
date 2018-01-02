@@ -12,7 +12,7 @@ firewall rules beyond its intended function.
 
 `vpnfailsafe` ensures that all traffic to/from the internet goes through the VPN.
 It is meant to be executed by OpenVPN when the tunnel is established (--up), or
-torn down (--down). 
+torn down (--down).
 
 On --up:
 * All configured VPN server domains are resolved and saved in /etc/hosts.
@@ -66,6 +66,8 @@ the openresolv requirement. There are at least two different, popular packages
 providing the resolvconf binary, which are not compatible (one supports the
 `-x` switch used by `vpnfailsafe` and the other does not). On distributions
 where multiple implementations are available, openresolv should be chosen.
+On CentOS/RHEL systems this [openresolv](https://github.com/rsmarples/openresolv)
+project is known to work. 
 
 The only assumption is that the VPN server will push at least one DNS server to
 the client.

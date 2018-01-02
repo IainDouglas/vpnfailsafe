@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+#
+#
+# Ensure the path contains /sbin for the ip command
+
+if [[ ":$PATH:" != *":/sbin:"* ]]
+then
+    PATH="$PATH:/sbin"
+fi
 
 set -eEo pipefail
 
